@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import apps.user_auth.views as uav
+import warhammer.views as wv
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', wv.start_view),
+    path('register/', uav.RegisterView.as_view()),
+    path('login/', uav.LoginView.as_view()),
+    path('logout/', uav.LogoutView.as_view()),
 ]
