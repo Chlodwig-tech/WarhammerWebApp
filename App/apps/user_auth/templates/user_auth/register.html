@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Rejestracja{% endblock %}
+
+{% block content %}
+    <div class="container py-5">
+        <h1>Rejestracja</h1>
+        <form method="POST"> {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-primary" type="submit">Zajerestruj się</button>
+        </form>
+        <p class="text-center">Masz już konto? <a href="/login">Zaloguj się</a>.</p>
+    </div>
+{% endblock %}
